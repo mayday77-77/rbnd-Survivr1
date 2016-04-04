@@ -6,25 +6,26 @@ class String
 		color_options.keys
 	end
 
+	# define method to return the sample ouput of some color 
 	def self.sample_colors	
-
+		color_options.each { | color_name, color_code | puts "This is " + color_name.to_s.send(color_name) }
 	end
 
-	# creating methods on the fly
+	# creating instance methods with class_eval
 	def self.create_colors
 		color_options.each do | color_name, color_code |
 			new_method = %Q{
 				def #{color_name}
-					"\e[#{color_code}m abc \e[0m"
+					"\e[#{color_code}m" + self + "\e[0m"
 				end
 				}
-			self.class_eval(new_method)
-			puts new_method
+			class_eval(new_method)
 			end
 	end
 
 private
-	#define the available colors and their respective color codes in a hash
+	# define the available colors and their respective color codes in a hash
+	# double check the color codes
 	def self.color_options
 		{
 			:red => 31,
@@ -41,3 +42,6 @@ private
 	end
 
 end
+
+# Calling the class method to create the instance methods, but it does not seem to be a good way
+String.create_colors
