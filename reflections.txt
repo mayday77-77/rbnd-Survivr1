@@ -1,7 +1,13 @@
-How does your gem take advantage of Ruby¡¯s metaprogramming capabilities?
+How does your gem take advantage of Rubyâ€™s metaprogramming capabilities?
+Ans: From the lessons taught, I make use of the class_eval to create the methods on the fly.
 
 How long did you spend working on this project?
+Ans: Just a few days as it seems like a short assignment, but I am still  re-reading the concepts of metaprogramming
+and looking at the external links provided by the lessons.
+Also took some time to do up the README.md properly.
 
 What was the most rewarding challenge you conquered?
+Ans: Able to use metaprogramming concept into this project. Though small and simple, but a good learning experience.
 
 Where do you still have room to grow?
+Ans: Should try other dynamc methods like define_method and method_missing to see how they can work in this project.

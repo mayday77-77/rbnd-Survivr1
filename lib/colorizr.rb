@@ -25,7 +25,6 @@ class String
 
 private
 	# define the available colors and their respective color codes in a hash
-	# double check the color codes
 	def self.color_options
 		{
 			:red => 31,
